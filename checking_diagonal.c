@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdbool.h>
+int main()
+{ 
+  int r, c;
+    scanf("%d %d", &r, &c);
+    int a[r][c];
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+
+    if (r == c)
+    {
+        bool is_diagonal = true;
+        for (int i = 0; i < r; i++)
+        {
+            for (int j = 0; j < c; j++)
+            {
+                if (i != j)
+                {
+                    if (a[i][j] != 0)
+                    {
+                        is_diagonal = false;
+                        printf("Not Diagonal");
+                    }
+                }
+            }
+        }
+        if (is_diagonal == true)
+        {
+            printf("Diagonal");
+        }
+    }
+    else
+    {
+        printf("Not diagonal");
+    }
+
+  return 0;
+}
